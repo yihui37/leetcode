@@ -23,25 +23,34 @@
         <el-button type="primary" @click="submit(array,target)">submit</el-button>
       </p>
     </div>
-    <div class="anserWrap">
+    <div class="resultWrap">
       <h4 class="subTitle">Result: {{execute}}</h4>
       <pre :class="execute">{{result}}</pre>
     </div>
-    <el-tabs type="border-card" :value="activeTab">
+    <div class="answerWrap">
       <h4 class="subTitle">Answers:</h4>
-      <el-tab-pane label="解法一  2.5% 1025ms" name="1">
-        <h5>我的第一次解法 for循环遍历</h5>
-        <pre>
-        <code>{{answers[1]}}</code>
-      </pre>
-      </el-tab-pane>
-      <el-tab-pane label="解法二  59.88% 80ms" name="2">
-        <h5>Hash解法</h5>
-        <pre>
-        <code>{{answers[2]}}</code>
-      </pre>
-      </el-tab-pane>
-    </el-tabs>
+      <el-tabs type="border-card" :value="activeTab">
+        <el-tab-pane label="解法一  2.5% 1025ms" name="1">
+          <h5>我的第一次解法 for循环遍历</h5>
+          <pre>
+            <code>{{answers[1]}}</code>
+          </pre>
+        </el-tab-pane>
+
+        <el-tab-pane label="解法二  59.88% 80ms" name="2">
+          <h5>Hash解法</h5>
+          <pre>
+            <code>{{answers[2]}}</code>
+          </pre>
+        </el-tab-pane>
+        <el-tab-pane label="解法三  69.95% 72ms" name="3">
+          <h5>Hash解法，for循环</h5>
+          <pre>
+            <code>{{answers[3]}}</code>
+          </pre>
+        </el-tab-pane>
+      </el-tabs>
+    </div>
   </div>
 </template>
 
@@ -69,14 +78,21 @@ export default {
         "2": `
     submit(array, target) {
       let hash = {};
-      for (let [findex, i] of nums.entries()) {
-        if (hash[target - i] !== undefined) {
-          this.result = [hash[target - i], findex];
-          this.execute = "success";
-          return;
+      for (let [index, value] of nums.entries()) {
+        if (hash[target - value] !== undefined) {
+          return [hash[target - value], index];
         }
-        hash[i] = findex;
-        console.log("hash", hash);
+        hash[value] = index;
+      }
+    }`,
+        "3": `
+    submit(array, target) {
+      let hash = {};
+      for (let i = 0; i < nums.length; i++) {
+        if (hash[target - nums[i]] !== undefined) {
+          return [hash[target - nums[i]], i];
+        }
+        hash[nums[i]] = i;
       }
     }`
       }
@@ -122,13 +138,13 @@ export default {
       try {
         const nums = array.split(",").map(num => Number(num));
         let hash = {};
-        for (let [findex, i] of nums.entries()) {
-          if (hash[target - i] !== undefined) {
-            this.result = [hash[target - i], findex];
+        for (let [index, value] of nums.entries()) {
+          if (hash[target - value] !== undefined) {
+            this.result = [hash[target - value], index];
             this.execute = "success";
             return;
           }
-          hash[i] = findex;
+          hash[value] = index;
           console.log("hash", hash);
         }
         this.result = [];
@@ -150,7 +166,7 @@ export default {
             return;
           }
           hash[nums[i]] = i;
-          console.log("hash", hash);
+          console.log("hash2", hash);
         }
         this.result = [];
         this.execute = "error";
