@@ -4,11 +4,18 @@
     <h1>LeetCode习题集{{this.$route.params.id}}</h1>
     <el-collapse accordion v-model="activeName">
       <el-collapse-item name="1">
-        <template slot="title">
-          Two Sum
+        <template slot="title">Two Sum
+          <el-tag type="success">EASY</el-tag>
           <i class="header-icon el-icon-star-on"></i>
         </template>
         <TwoSum></TwoSum>
+      </el-collapse-item>
+      <el-collapse-item name="2">
+        <template slot="title">Reverse Integer
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <ReverseInteger></ReverseInteger>
       </el-collapse-item>
     </el-collapse>
     <el-button
@@ -23,9 +30,11 @@
  
  <script>
 import TwoSum from "../components/set/TwoSum.vue";
+import ReverseInteger from "../components/set/ReverseInteger.vue";
 export default {
   components: {
-    TwoSum
+    TwoSum,
+    ReverseInteger
   },
   watch: {
     "$route.params": {
@@ -53,6 +62,9 @@ export default {
 </script>
  
  <style lang="scss">
+.el-tag {
+  margin-left: 10px;
+}
 .header-icon {
   margin-left: 15px;
 }
