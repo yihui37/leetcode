@@ -1,5 +1,3 @@
-# LeetCode
-
 ![LeetCode](https://leetcode.com/static/webpack_bundles/images/logo-dark.e99485d9b.svg)
 
 ## 项目背景
@@ -10,14 +8,9 @@
 
 项目使用`VUE-CLI3`搭建，UI 选用`Element-UI`组件,是个非常简易的 SPA 小项目
 
-## Project setup
+### 启动项目
 
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-
-```
 npm run serve
 ```
