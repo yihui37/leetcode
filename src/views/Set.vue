@@ -13,9 +13,16 @@
       <el-collapse-item name="2">
         <template slot="title">Reverse Integer
           <el-tag type="success">EASY</el-tag>
-          <i class="header-icon el-icon-star-on"></i>
+          <i class="header-icon"></i>
         </template>
         <ReverseInteger></ReverseInteger>
+      </el-collapse-item>
+      <el-collapse-item name="3">
+        <template slot="title">Palindrome Number
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <PalindromeNumber></PalindromeNumber>
       </el-collapse-item>
     </el-collapse>
     <el-button
@@ -31,10 +38,12 @@
  <script>
 import TwoSum from "../components/set/TwoSum.vue";
 import ReverseInteger from "../components/set/ReverseInteger.vue";
+import PalindromeNumber from "../components/set/PalindromeNumber.vue";
 export default {
   components: {
     TwoSum,
-    ReverseInteger
+    ReverseInteger,
+    PalindromeNumber
   },
   watch: {
     "$route.params": {
