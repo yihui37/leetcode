@@ -2,7 +2,10 @@
  <template>
   <div class="setWrap">
     <h1>LeetCode习题集{{this.$route.params.id}}</h1>
-    <el-collapse accordion v-model="activeName">
+    <el-collapse
+      accordion
+      v-model="activeName"
+    >
       <el-collapse-item name="1">
         <template slot="title">Two Sum
           <el-tag type="success">EASY</el-tag>
@@ -24,6 +27,13 @@
         </template>
         <PalindromeNumber></PalindromeNumber>
       </el-collapse-item>
+      <el-collapse-item name="4">
+        <template slot="title"> Roman to Integer
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <RomanToInteger></RomanToInteger>
+      </el-collapse-item>
     </el-collapse>
     <el-button
       v-if="activeName"
@@ -39,11 +49,13 @@
 import TwoSum from "../components/set/TwoSum.vue";
 import ReverseInteger from "../components/set/ReverseInteger.vue";
 import PalindromeNumber from "../components/set/PalindromeNumber.vue";
+import RomanToInteger from "../components/set/RomanToInteger.vue";
 export default {
   components: {
     TwoSum,
     ReverseInteger,
-    PalindromeNumber
+    PalindromeNumber,
+    RomanToInteger
   },
   watch: {
     "$route.params": {
