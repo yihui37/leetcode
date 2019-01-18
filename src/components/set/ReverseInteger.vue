@@ -42,6 +42,7 @@
     <el-tabs
       type="border-card"
       :value="activeTab"
+      @tab-click="changeTab"
     >
       <h4 class="subTitle">Answers:</h4>
       <el-tab-pane
@@ -100,6 +101,10 @@ export default {
   },
   mounted() {},
   methods: {
+    changeTab({ name }) {
+      this.activeTab = name;
+      console.log("changeTab", name, this.activeTab);
+    },
     /**
      * @param {number} number
      * @return {number}

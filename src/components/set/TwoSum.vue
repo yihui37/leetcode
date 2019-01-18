@@ -16,11 +16,20 @@
     <div class="paramsWrap">
       <h4 class="subTitle">Params</h4>
       <label>Array</label>
-      <el-input type="text" v-model="array"></el-input>
+      <el-input
+        type="text"
+        v-model="array"
+      ></el-input>
       <label>Target</label>
-      <el-input type="text" v-model="target"></el-input>
+      <el-input
+        type="text"
+        v-model="target"
+      ></el-input>
       <p>
-        <el-button type="primary" @click="submit(array,target)">submit</el-button>
+        <el-button
+          type="primary"
+          @click="submit(array,target)"
+        >submit</el-button>
       </p>
     </div>
     <div class="resultWrap">
@@ -29,21 +38,34 @@
     </div>
     <div class="answerWrap">
       <h4 class="subTitle">Answers:</h4>
-      <el-tabs type="border-card" :value="activeTab">
-        <el-tab-pane label="解法一  2.5% 1025ms" name="1">
+      <el-tabs
+        type="border-card"
+        :value="activeTab"
+        @tab-click="changeTab"
+      >
+        <el-tab-pane
+          label="解法一  2.5% 1025ms"
+          name="1"
+        >
           <h5>我的第一次解法 for循环遍历</h5>
           <pre>
             <code>{{answers[1]}}</code>
           </pre>
         </el-tab-pane>
 
-        <el-tab-pane label="解法二  59.88% 80ms" name="2">
+        <el-tab-pane
+          label="解法二  59.88% 80ms"
+          name="2"
+        >
           <h5>Hash解法</h5>
           <pre>
             <code>{{answers[2]}}</code>
           </pre>
         </el-tab-pane>
-        <el-tab-pane label="解法三  69.95% 72ms" name="3">
+        <el-tab-pane
+          label="解法三  69.95% 72ms"
+          name="3"
+        >
           <h5>Hash解法，for循环</h5>
           <pre>
             <code>{{answers[3]}}</code>
@@ -100,6 +122,10 @@ export default {
   },
   mounted() {},
   methods: {
+    changeTab({ name }) {
+      this.activeTab = name;
+      console.log("changeTab", name, this.activeTab);
+    },
     /**
      * @param {string} array
      * @param {number} target

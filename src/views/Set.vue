@@ -34,6 +34,13 @@
         </template>
         <RomanToInteger></RomanToInteger>
       </el-collapse-item>
+      <el-collapse-item name="5">
+        <template slot="title"> Longest Common Prefix
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <LongestCommonPrefix></LongestCommonPrefix>
+      </el-collapse-item>
     </el-collapse>
     <el-button
       v-if="activeName"
@@ -50,12 +57,14 @@ import TwoSum from "../components/set/TwoSum.vue";
 import ReverseInteger from "../components/set/ReverseInteger.vue";
 import PalindromeNumber from "../components/set/PalindromeNumber.vue";
 import RomanToInteger from "../components/set/RomanToInteger.vue";
+import LongestCommonPrefix from "../components/set/LongestCommonPrefix.vue";
 export default {
   components: {
     TwoSum,
     ReverseInteger,
     PalindromeNumber,
-    RomanToInteger
+    RomanToInteger,
+    LongestCommonPrefix
   },
   watch: {
     "$route.params": {
