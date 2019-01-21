@@ -1,7 +1,10 @@
 <template>
   <div class="exerciseItemWrap">
     <article>
-      <h3 class="mainTitle">Palindrome Number</h3>
+      <h3 class="mainTitle"><a
+          href="https://leetcode-cn.com/articles/palindrome-number/"
+          target="_blank"
+        >Palindrome Number</a></h3>
       <section>
         <h4 class="subTitle">No.9 Question:</h4>
         <p>Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.</p>

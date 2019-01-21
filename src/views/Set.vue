@@ -41,6 +41,13 @@
         </template>
         <LongestCommonPrefix></LongestCommonPrefix>
       </el-collapse-item>
+      <el-collapse-item name="6">
+        <template slot="title"> Valid Parentheses
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <ValidParentheses></ValidParentheses>
+      </el-collapse-item>
     </el-collapse>
     <el-button
       v-if="activeName"
@@ -58,13 +65,15 @@ import ReverseInteger from "../components/set/ReverseInteger.vue";
 import PalindromeNumber from "../components/set/PalindromeNumber.vue";
 import RomanToInteger from "../components/set/RomanToInteger.vue";
 import LongestCommonPrefix from "../components/set/LongestCommonPrefix.vue";
+import ValidParentheses from "../components/set/ValidParentheses.vue";
 export default {
   components: {
     TwoSum,
     ReverseInteger,
     PalindromeNumber,
     RomanToInteger,
-    LongestCommonPrefix
+    LongestCommonPrefix,
+    ValidParentheses
   },
   watch: {
     "$route.params": {
@@ -111,6 +120,9 @@ export default {
   text-align: left;
   .mainTitle {
     text-align: center;
+    a {
+      color: #409eff;
+    }
   }
   pre {
     padding: 10px;

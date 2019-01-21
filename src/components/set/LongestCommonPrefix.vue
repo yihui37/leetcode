@@ -1,7 +1,10 @@
 <template>
   <div class="exerciseItemWrap">
     <article>
-      <h3 class="mainTitle">Longest Common Prefix</h3>
+      <h3 class="mainTitle"><a
+          href="https://leetcode-cn.com/articles/longest-common-prefix/"
+          target="_blank"
+        >Longest Common Prefix</a></h3>
       <section>
         <h4 class="subTitle">No.14 Question:</h4>
         <p>Write a function to find the longest common prefix string amongst an array of strings.<br>If there is no common prefix, return an empty string "".</p>

@@ -1,7 +1,10 @@
 <template>
   <div class="exerciseItemWrap">
     <article>
-      <h3 class="mainTitle">Two Sum</h3>
+      <h3 class="mainTitle"><a
+          href="https://leetcode-cn.com/articles/two-sum/"
+          target="_blank"
+        >Two Sum</a></h3>
       <section>
         <h4 class="subTitle">No.1 Question:</h4>
         <p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.

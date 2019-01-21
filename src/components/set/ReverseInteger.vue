@@ -1,7 +1,10 @@
 <template>
   <div class="exerciseItemWrap">
     <article>
-      <h3 class="mainTitle">Reverse Integer</h3>
+      <h3 class="mainTitle"><a
+          href="https://leetcode-cn.com/articles/reverse-integer/"
+          target="_blank"
+        >Reverse Integer</a></h3>
       <section>
         <h4 class="subTitle">No.7 Question:</h4>
         <p>Given a <b>32-bit signed integer</b>, reverse digits of an integer.</p>
