@@ -23,30 +23,37 @@
       <el-collapse-item name="3">
         <template slot="title">Palindrome Number
           <el-tag type="success">EASY</el-tag>
-          <i class="header-icon el-icon-star-on"></i>
+          <i class="header-icon"></i>
         </template>
         <PalindromeNumber></PalindromeNumber>
       </el-collapse-item>
       <el-collapse-item name="4">
         <template slot="title"> Roman to Integer
           <el-tag type="success">EASY</el-tag>
-          <i class="header-icon el-icon-star-on"></i>
+          <i class="header-icon"></i>
         </template>
         <RomanToInteger></RomanToInteger>
       </el-collapse-item>
       <el-collapse-item name="5">
         <template slot="title"> Longest Common Prefix
           <el-tag type="success">EASY</el-tag>
-          <i class="header-icon el-icon-star-on"></i>
+          <i class="header-icon"></i>
         </template>
         <LongestCommonPrefix></LongestCommonPrefix>
       </el-collapse-item>
       <el-collapse-item name="6">
         <template slot="title"> Valid Parentheses
           <el-tag type="success">EASY</el-tag>
-          <i class="header-icon el-icon-star-on"></i>
+          <i class="header-icon"></i>
         </template>
         <ValidParentheses></ValidParentheses>
+      </el-collapse-item>
+      <el-collapse-item name="7">
+        <template slot="title"> Merge Two Sorted Lists
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon"></i>
+        </template>
+        <MergeTwoSortedLists></MergeTwoSortedLists>
       </el-collapse-item>
     </el-collapse>
     <el-button
@@ -66,6 +73,7 @@ import PalindromeNumber from "../components/set/PalindromeNumber.vue";
 import RomanToInteger from "../components/set/RomanToInteger.vue";
 import LongestCommonPrefix from "../components/set/LongestCommonPrefix.vue";
 import ValidParentheses from "../components/set/ValidParentheses.vue";
+import MergeTwoSortedLists from "../components/set/MergeTwoSortedLists.vue";
 export default {
   components: {
     TwoSum,
@@ -73,7 +81,8 @@ export default {
     PalindromeNumber,
     RomanToInteger,
     LongestCommonPrefix,
-    ValidParentheses
+    ValidParentheses,
+    MergeTwoSortedLists
   },
   watch: {
     "$route.params": {
