@@ -55,6 +55,13 @@
         </template>
         <MergeTwoSortedLists></MergeTwoSortedLists>
       </el-collapse-item>
+      <el-collapse-item name="8">
+        <template slot="title"> Remove Duplicates from Sorted Array
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon"></i>
+        </template>
+        <RemoveDuplicatesfromSortedArray></RemoveDuplicatesfromSortedArray>
+      </el-collapse-item>
     </el-collapse>
     <el-button
       v-if="activeName"
@@ -74,6 +81,7 @@ import RomanToInteger from "../components/set/RomanToInteger.vue";
 import LongestCommonPrefix from "../components/set/LongestCommonPrefix.vue";
 import ValidParentheses from "../components/set/ValidParentheses.vue";
 import MergeTwoSortedLists from "../components/set/MergeTwoSortedLists.vue";
+import RemoveDuplicatesfromSortedArray from "../components/set/RemoveDuplicatesfromSortedArray.vue";
 export default {
   components: {
     TwoSum,
@@ -82,7 +90,8 @@ export default {
     RomanToInteger,
     LongestCommonPrefix,
     ValidParentheses,
-    MergeTwoSortedLists
+    MergeTwoSortedLists,
+    RemoveDuplicatesfromSortedArray
   },
   watch: {
     "$route.params": {
