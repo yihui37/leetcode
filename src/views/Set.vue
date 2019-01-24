@@ -9,7 +9,7 @@
       <el-collapse-item name="1">
         <template slot="title">Two Sum
           <el-tag type="success">EASY</el-tag>
-          <i class="header-icon el-icon-star-on"></i>
+          <i class="header-icon"></i>
         </template>
         <TwoSum></TwoSum>
       </el-collapse-item>
@@ -69,6 +69,13 @@
         </template>
         <RemoveElement></RemoveElement>
       </el-collapse-item>
+      <el-collapse-item name="10">
+        <template slot="title"> Count and Say
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <CountAndSay></CountAndSay>
+      </el-collapse-item>
     </el-collapse>
     <el-button
       v-if="activeName"
@@ -90,6 +97,8 @@ import ValidParentheses from "../components/set/ValidParentheses.vue";
 import MergeTwoSortedLists from "../components/set/MergeTwoSortedLists.vue";
 import RemoveDuplicatesfromSortedArray from "../components/set/RemoveDuplicatesfromSortedArray.vue";
 import RemoveElement from "../components/set/RemoveElement.vue";
+import CountAndSay from "../components/set/CountAndSay.vue";
+
 export default {
   components: {
     TwoSum,
@@ -100,7 +109,8 @@ export default {
     ValidParentheses,
     MergeTwoSortedLists,
     RemoveDuplicatesfromSortedArray,
-    RemoveElement
+    RemoveElement,
+    CountAndSay
   },
   watch: {
     "$route.params": {
