@@ -150,10 +150,6 @@ export default {
       this.execute = "";
       console.log("changeTab", name, this.activeTab);
     },
-    /**
-     * @param {number} number
-     * @return {number}
-     */
     submit() {
       const method = this[`method${this.activeTab}`],
         params = JSON.parse(this.inputValue),
