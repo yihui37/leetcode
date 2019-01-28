@@ -76,6 +76,13 @@
         </template>
         <CountAndSay></CountAndSay>
       </el-collapse-item>
+      <el-collapse-item name="11">
+        <template slot="title"> Maximum Subarray
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <MaximumSubarray></MaximumSubarray>
+      </el-collapse-item>
     </el-collapse>
     <el-button
       v-if="activeName"
@@ -98,6 +105,7 @@ import MergeTwoSortedLists from "../components/set/MergeTwoSortedLists.vue";
 import RemoveDuplicatesfromSortedArray from "../components/set/RemoveDuplicatesfromSortedArray.vue";
 import RemoveElement from "../components/set/RemoveElement.vue";
 import CountAndSay from "../components/set/CountAndSay.vue";
+import MaximumSubarray from "../components/set/MaximumSubarray.vue";
 
 export default {
   components: {
@@ -110,7 +118,8 @@ export default {
     MergeTwoSortedLists,
     RemoveDuplicatesfromSortedArray,
     RemoveElement,
-    CountAndSay
+    CountAndSay,
+    MaximumSubarray
   },
   watch: {
     "$route.params": {
