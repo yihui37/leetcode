@@ -42,23 +42,24 @@
     >
       <h4 class="subTitle">Answers:</h4>
       <el-tab-pane
-        label="解法一  72ms"
+        label="解法一"
         name="1"
       >
         <h5>我的第一次解法 arr.join -> string -> number+1 -> string -> split -> arr[nums]。具体如下：</h5>
+        <el-tag type="danger">错误：未考虑到数值的有效范围，超出后不可使用数学加法完成</el-tag>
         <pre>
         <code>{{answers[1]}}</code>
       </pre>
       </el-tab-pane>
-      <!-- <el-tab-pane
-        label="解法二  44.32% 72ms"
+      <el-tab-pane
+        label="解法二  72ms"
         name="2"
       >
-        <h5>使用.startsWith(String prefix, int toffset)方法代替正则匹配，使用第一个元素作为校验值，不匹配则依次去掉元素的最后一个字符继续匹配，直到匹配到全部符合的prefix</h5>
+        <h5>从数组最后一个元素开始+1，如果和为10，则对前一个元素继续加1，否则结束循环。注意第一位数结果进1，使用unshift向数组开头添加1。</h5>
         <pre>
         <code>{{answers[2]}}</code>
       </pre>
-      </el-tab-pane> -->
+      </el-tab-pane>
     </el-tabs>
   </div>
 </template>
@@ -67,36 +68,32 @@
 export default {
   data() {
     return {
-      inputValue: 6,
+      inputValue: "9",
       result: "",
       execute: "",
       activeTab: "1",
       answers: {
         "1": `
-    let getNext = function(str) {
-      let strArr = str.split("").map(char => Number(char)),
-        count = 0,
-        curVal = strArr[0],
-        res = "";
-      for (let i = 0; i < strArr.length; i++) {
-        if (curVal == strArr[i]) {
-          count++;
-        } else {
-          res += String(count)+String(curVal);
-          count = 1;
-          curVal = strArr[i];
+    submit(digits) {
+        var num = parseInt(digits.join('')) + 1;
+        return num.toString().split('').map(char=>Number(char));
+    };`,
+        "2": `
+    submit(digits) {
+        for(let i = digits.length - 1;i>-1;i--){
+            let num = digits[i] + 1;
+            if(num == 10) {
+                digits[i] = 0;
+                if(i==0){
+                    // 第一位满10进1，多一位
+                    digits.unshift(1);
+                }
+            }else{
+                digits[i] = num;
+                break;
+            }
         }
-      }
-      res += String(count)+String(curVal);
-      return res;
-    };
-
-    submit(n) {
-        let result = "1";
-        for (let j = 1; j < n; j++) {
-          result = getNext(result);
-        }
-        return result;
+        return digits;
     };`
       }
     };
@@ -111,20 +108,45 @@ export default {
     },
     submit() {
       const method = this[`method${this.activeTab}`];
-      method && method(this.inputValue.split(','));
+      method && method(this.inputValue.split(",").map(char => Number(char)));
     },
     /**
      * @param {array} digits
      * @return {String}
      */
-    //正则 从0到all匹配
+    // 数学加法
     method1(digits) {
       try {
-        let str = digits.join(''),
-        num = Number(str)+1,
-        res = String(num).split('').map(item=>Number(item))
-
+        let str = digits.join(""),
+          num = Number(str) + 1,
+          res = String(num)
+            .split("")
+            .map(item => Number(item));
         this.result = res;
+        this.execute = "success";
+      } catch (err) {
+        this.result = err;
+        this.execute = "error";
+      }
+    },
+    // 从最后一个元素开始单个加1，逢十进一
+    method2(digits) {
+      try {
+        for (let i = digits.length - 1; i > -1; i--) {
+          let num = digits[i] + 1;
+          if (num == 10) {
+            digits[i] = 0;
+            if (i == 0) {
+              // 第一位满10进1，多一位
+              debugger;
+              digits.unshift(1);
+            }
+          } else {
+            digits[i] = num;
+            break;
+          }
+        }
+        this.result = digits.join(",");
         this.execute = "success";
       } catch (err) {
         this.result = err;

@@ -83,6 +83,13 @@
         </template>
         <MaximumSubarray></MaximumSubarray>
       </el-collapse-item>
+      <el-collapse-item name="12">
+        <template slot="title"> Plus One
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <PlusOne></PlusOne>
+      </el-collapse-item>
     </el-collapse>
     <el-button
       v-if="activeName"
@@ -106,6 +113,7 @@ import RemoveDuplicatesfromSortedArray from "../components/set/RemoveDuplicatesf
 import RemoveElement from "../components/set/RemoveElement.vue";
 import CountAndSay from "../components/set/CountAndSay.vue";
 import MaximumSubarray from "../components/set/MaximumSubarray.vue";
+import PlusOne from "../components/set/PlusOne.vue";
 
 export default {
   components: {
@@ -119,7 +127,8 @@ export default {
     RemoveDuplicatesfromSortedArray,
     RemoveElement,
     CountAndSay,
-    MaximumSubarray
+    MaximumSubarray,
+    PlusOne
   },
   watch: {
     "$route.params": {
