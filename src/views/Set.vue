@@ -90,6 +90,13 @@
         </template>
         <PlusOne></PlusOne>
       </el-collapse-item>
+      <el-collapse-item name="13">
+        <template slot="title"> Add Binary
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <AddBinary></AddBinary>
+      </el-collapse-item>
     </el-collapse>
     <el-button
       v-if="activeName"
@@ -114,6 +121,7 @@ import RemoveElement from "../components/set/RemoveElement.vue";
 import CountAndSay from "../components/set/CountAndSay.vue";
 import MaximumSubarray from "../components/set/MaximumSubarray.vue";
 import PlusOne from "../components/set/PlusOne.vue";
+import AddBinary from "../components/set/AddBinary.vue";
 
 export default {
   components: {
@@ -128,7 +136,8 @@ export default {
     RemoveElement,
     CountAndSay,
     MaximumSubarray,
-    PlusOne
+    PlusOne,
+    AddBinary
   },
   watch: {
     "$route.params": {
