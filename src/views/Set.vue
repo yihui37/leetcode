@@ -97,6 +97,20 @@
         </template>
         <AddBinary></AddBinary>
       </el-collapse-item>
+      <el-collapse-item name="14">
+        <template slot="title"> Sqrt(X)
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <SqrtX></SqrtX>
+      </el-collapse-item>
+      <el-collapse-item name="15">
+        <template slot="title"> Climbing Stairs
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <ClimbingStairs></ClimbingStairs>
+      </el-collapse-item>
     </el-collapse>
     <el-button
       v-if="activeName"
@@ -122,6 +136,8 @@ import CountAndSay from "../components/set/CountAndSay.vue";
 import MaximumSubarray from "../components/set/MaximumSubarray.vue";
 import PlusOne from "../components/set/PlusOne.vue";
 import AddBinary from "../components/set/AddBinary.vue";
+import SqrtX from "../components/set/SqrtX.vue";
+import ClimbingStairs from "../components/set/ClimbingStairs.vue";
 
 export default {
   components: {
@@ -137,7 +153,9 @@ export default {
     CountAndSay,
     MaximumSubarray,
     PlusOne,
-    AddBinary
+    AddBinary,
+    SqrtX,
+    ClimbingStairs
   },
   watch: {
     "$route.params": {
