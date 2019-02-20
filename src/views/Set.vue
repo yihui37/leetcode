@@ -111,6 +111,13 @@
         </template>
         <ClimbingStairs></ClimbingStairs>
       </el-collapse-item>
+      <el-collapse-item name="16">
+        <template slot="title"> Symmetric Tree
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <SymmetricTree></SymmetricTree>
+      </el-collapse-item>
     </el-collapse>
     <el-button
       v-if="activeName"
@@ -138,6 +145,7 @@ import PlusOne from "../components/set/PlusOne.vue";
 import AddBinary from "../components/set/AddBinary.vue";
 import SqrtX from "../components/set/SqrtX.vue";
 import ClimbingStairs from "../components/set/ClimbingStairs.vue";
+import SymmetricTree from "../components/set/SymmetricTree.vue";
 
 export default {
   components: {
@@ -155,7 +163,8 @@ export default {
     PlusOne,
     AddBinary,
     SqrtX,
-    ClimbingStairs
+    ClimbingStairs,
+    SymmetricTree
   },
   watch: {
     "$route.params": {
