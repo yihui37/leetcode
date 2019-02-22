@@ -118,6 +118,13 @@
         </template>
         <SymmetricTree></SymmetricTree>
       </el-collapse-item>
+      <el-collapse-item name="17">
+        <template slot="title"> Binary Tree Level Order Traversal II
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <BinaryTreeLevelOrderTraversalII></BinaryTreeLevelOrderTraversalII>
+      </el-collapse-item>
     </el-collapse>
     <el-button
       v-if="activeName"
@@ -146,6 +153,7 @@ import AddBinary from "../components/set/AddBinary.vue";
 import SqrtX from "../components/set/SqrtX.vue";
 import ClimbingStairs from "../components/set/ClimbingStairs.vue";
 import SymmetricTree from "../components/set/SymmetricTree.vue";
+import BinaryTreeLevelOrderTraversalII from "../components/set/BinaryTreeLevelOrderTraversal-II";
 
 export default {
   components: {
@@ -164,7 +172,8 @@ export default {
     AddBinary,
     SqrtX,
     ClimbingStairs,
-    SymmetricTree
+    SymmetricTree,
+    BinaryTreeLevelOrderTraversalII
   },
   watch: {
     "$route.params": {
