@@ -125,6 +125,13 @@
         </template>
         <BinaryTreeLevelOrderTraversalII></BinaryTreeLevelOrderTraversalII>
       </el-collapse-item>
+      <el-collapse-item name="18">
+        <template slot="title"> Convert Sorted List to Binary Search Tree
+          <el-tag type="warning">MEDIUM</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <ConvertSortedListToBinarySearchTree></ConvertSortedListToBinarySearchTree>
+      </el-collapse-item>
     </el-collapse>
     <el-button
       v-if="activeName"
@@ -154,6 +161,7 @@ import SqrtX from "../components/set/SqrtX.vue";
 import ClimbingStairs from "../components/set/ClimbingStairs.vue";
 import SymmetricTree from "../components/set/SymmetricTree.vue";
 import BinaryTreeLevelOrderTraversalII from "../components/set/BinaryTreeLevelOrderTraversal-II";
+import ConvertSortedListToBinarySearchTree from "../components/set/ConvertSortedListToBinarySearchTree";
 
 export default {
   components: {
@@ -173,7 +181,8 @@ export default {
     SqrtX,
     ClimbingStairs,
     SymmetricTree,
-    BinaryTreeLevelOrderTraversalII
+    BinaryTreeLevelOrderTraversalII,
+    ConvertSortedListToBinarySearchTree
   },
   watch: {
     "$route.params": {
