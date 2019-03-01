@@ -139,6 +139,13 @@
         </template>
         <FlattenBinaryTreeToLinkedList></FlattenBinaryTreeToLinkedList>
       </el-collapse-item>
+      <el-collapse-item name="20">
+        <template slot="title"> Triangle
+          <el-tag type="warning">MEDIUM</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <Triangle></Triangle>
+      </el-collapse-item>
     </el-collapse>
     <el-button
       v-if="activeName"
@@ -170,6 +177,7 @@ import SymmetricTree from "../components/set/SymmetricTree.vue";
 import BinaryTreeLevelOrderTraversalII from "../components/set/BinaryTreeLevelOrderTraversal-II";
 import ConvertSortedListToBinarySearchTree from "../components/set/ConvertSortedListToBinarySearchTree";
 import FlattenBinaryTreeToLinkedList from "../components/set/FlattenBinaryTreeToLinkedList";
+import Triangle from "../components/set/Triangle";
 
 export default {
   components: {
@@ -191,7 +199,8 @@ export default {
     SymmetricTree,
     BinaryTreeLevelOrderTraversalII,
     ConvertSortedListToBinarySearchTree,
-    FlattenBinaryTreeToLinkedList
+    FlattenBinaryTreeToLinkedList,
+    Triangle
   },
   watch: {
     "$route.params": {
