@@ -146,6 +146,13 @@
         </template>
         <Triangle></Triangle>
       </el-collapse-item>
+      <el-collapse-item name="21">
+        <template slot="title"> Best Time to Buy and Sell Stock II
+          <el-tag type="success">EASY</el-tag>
+          <i class="header-icon el-icon-star-on"></i>
+        </template>
+        <BestTimeToBuyAndSellStockII></BestTimeToBuyAndSellStockII>
+      </el-collapse-item>
     </el-collapse>
     <el-button
       v-if="activeName"
@@ -178,6 +185,7 @@ import BinaryTreeLevelOrderTraversalII from "../components/set/BinaryTreeLevelOr
 import ConvertSortedListToBinarySearchTree from "../components/set/ConvertSortedListToBinarySearchTree";
 import FlattenBinaryTreeToLinkedList from "../components/set/FlattenBinaryTreeToLinkedList";
 import Triangle from "../components/set/Triangle";
+import BestTimeToBuyAndSellStockII from "../components/set/BestTimeToBuyAndSellStockII";
 
 export default {
   components: {
@@ -200,7 +208,8 @@ export default {
     BinaryTreeLevelOrderTraversalII,
     ConvertSortedListToBinarySearchTree,
     FlattenBinaryTreeToLinkedList,
-    Triangle
+    Triangle,
+    BestTimeToBuyAndSellStockII
   },
   watch: {
     "$route.params": {
